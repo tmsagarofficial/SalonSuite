@@ -1,0 +1,325 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SalonSuite</title>
+    <!-- <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script> -->
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/home"><img src="{%static 'images/logo.png'%}" /></a>
+      </div>
+      <button class="button" onclick="location.href='/login'"><span >Login/SignUp </span></button>
+      <div class="hero">
+        <div class="container">
+          <h2>Welcome to Our Salon</h2>
+          <p>
+            Experience the best beauty services and manage your appointments
+            efficiently.
+          </p>
+          <a href="#" class="btn">Book Appointment</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="service-item">
+          <img src="{%static 'images/landing-page/10.jpg' %}"alt="Service 1" />
+          <h3>Hair Styling</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="service-item">
+          <img src="{%static 'images/landing-page/12.jpg' %}" alt="Service 2" />
+          <h3>Facials</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="service-item">
+          <img src="{%static 'images/landing-page/13.jpg' %}" alt="Service 3" />
+          <h3>Manicure & Pedicure</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <a href="" style="margin-left: 55%;color: rgb(225, 55, 112);font-size: large;">view all services</a>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <div class="container">
+        <h2>Our Pricing</h2>
+        <div class="price-item">
+          <h3>Basic Package</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <span class="price"><p>&#8377;499</p></span>
+        </div>
+        <div class="price-item">
+          <h3>Deluxe Package</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <span class="price"><p>&#8377;999</p></span>
+        </div>
+        <div class="price-item">
+          <h3>Premium Package</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <span class="price"><p>&#8377;1999</p>
+          </span>
+        </div>
+        <a href="" style="margin-left: 55%;color: rgb(225, 55, 112);font-size:large;">more</a>
+      </div>
+    </section>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">&#8593;</button>
+    </button>
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 SalonSuite. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+<style>
+    /* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color:#f5eef8;   
+  animation:infinite}
+  
+  /* Header Styles */
+  header {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+  }
+  .login{
+    float: right;
+    position: relative ;
+    top:-47px;
+    right: 13px;
+    border:2px solid black;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo img{
+    max-height: 50px;
+    margin-left: 15px;
+  }
+  /* Hero Section Styles */
+  .hero {
+    background-image: url('../static/images/landing-page/1.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 100px 0;
+  }
+  
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color:lightcoral;
+  }
+  
+  /* Services Section Styles */
+  .services {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+  }
+  
+  .service-item {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .service-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .service-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .service-item p {
+    font-size: 16px;
+  }
+  
+  /* Pricing Section Styles */
+  .pricing {
+    padding: 80px 0;
+  }
+  
+  .price-item {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .price-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .price-item p {
+    font-size: 16px;
+  }
+  
+  .price p{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  /* Contact Section Styles */
+  .contact {
+    padding: 80px 0;
+  }
+  
+  .contact input,
+  .contact textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .contact button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact button:hover {
+    background-color: #666;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  #scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  
+  #scrollToTopBtn:hover {
+    opacity: 1;
+  }
+  .button {
+    position: absolute;
+    top: 15px;
+  border-radius: 4px;
+  background-color: palevioletred;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 90%;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+  
+</style>
+
+<script>
+    window.onscroll = function() {
+    scrollFunction();
+};
+  
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("scrollToTopBtn").style.display = "block";
+    } else {
+      document.getElementById("scrollToTopBtn").style.display = "none";
+    }
+}
+
+function scrollToTop() {
+    const position = document.documentElement.scrollTop || document.body.scrollTop;
+    if (position > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, position - position / 8);
+    }
+  }
+  
+</script>
